@@ -1,0 +1,590 @@
+<!DOCTYPE html">
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Unidad 2</title>
+	<link rel="stylesheet" type="text/css" href="proyecto.css">
+</head>
+
+<body class="color_fondo">
+
+
+<!-- Titulo General -->
+<h1 class="titulo_general">ARQUITECTURA DE C&Oacute;MPUTADORAS</h1>
+
+
+<!-- Menú de navegación del sitio -->
+<nav>
+	<ul>
+		  <li><a href="index.html">Men&uacute;</a></li>
+		  <li><a href="unidad1.html">Unidad 1</a></li>
+		  <li><a href="unidad2.html" style="color: #81acf7";>Unidad 2</a></li>
+		  <li><a href="unidad3.html">Unidad 3</a></li>
+		  <li><a href="unidad4.html">Unidad 4</a></li>
+		  <li><a href="practicas.html">Pr&aacute;cticas</a></li>
+	</ul>
+</nav>
+
+
+<!-- Contenido principal -->
+<div class="contenido">
+	<div class="articulos">
+		<div class="secciones">
+			<div>
+			
+				<h1 class="titulo" id="2.1"><b>2.1 Organizaci&oacute;n del procesador</b></h1><br>
+				<p>La organizaci&oacute;n del procesador se refiere a la manera en que los diferentes componentes y circuitos del procesador 
+				est&aacute;n interconectados y coordinados para llevar a cabo las operaciones y tareas necesarias para procesar datos y ejecutar 
+				instrucciones.</p><br>
+				
+				<p>La Unidad de Procesamiento <i>(CPU)</i> controla el funcionamiento del computador y lleva a cabo sus funciones de procesamiento 
+				de datos. Frecuentemente se le llama procesador. Un procesador, incluye tanto registros visibles por el usuario como registros 
+				de control/estado. Los registros visibles por el usuario pueden ser de uso general o tener una utilidad especial, mientras que los 
+				registros de control y estado se usan para controlar el funcionamiento del procesador, un claro ejemplo es el contador de programa. 
+				<b>Lleva a cabo una gran variedad de:</b></p><br>
+				
+				<ul style="color: #38b1fc; font-weight: bold;">
+					<li>C&aacute;lculos.</li>
+					<li>Comparaciones num&eacute;ricas.</li>
+					<li>Transferencias de datos como respuesta a las peticiones de los programas que est&aacute;n siendo ejecutados en memoria.</li>
+				</ul><br><br>
+				
+				<h4 style="text-align: center;"><i>Sus partes fundamentales son:</i></h4><br>
+				
+				<p><b>Unidad de Control:</b> Extrae la instrucci&oacute;n en curso de memoria principal <i>(nivel de lenguaje de m&aacute;quina)</i>,
+				hace el proceso de decodificaci&oacute;n para interpretar su tipo y la naturaleza de sus argumentos. Con esto provee la 
+				señalizaci&oacute;n de control para las restantes etapas de la ejecuci&oacute;n de dicha instrucci&oacute;n.</p>
+				
+				<p><b>Unidad Aritm&eacute;tica L&oacute;gica <i>(ALU)</i>:</b> Dispositivo que realiza las operaciones aritm&eacute;ticas 
+				<i>(sumas, multiplicaciones)</i> o l&oacute;gicas <i>(OR, AND, NOT)</i>, determinadas por la unidad de control, sobre los argumentos
+				tambi&eacute;n determinados en el proceso de decodificaci&oacute;n. Como se ver&aacute;, esta unidad se diseña utilizando 
+				dispositivos combinacionales y secuenciales <i>(compuertas l&oacute;gicas)</i>.</p>
+				
+				<p><b>Registros:</b> Pequeña memoria de alta velocidad integrada dentro de la CPU, que permite almacenar resultados intermedios, 
+				informaci&oacute;n de control y estado en dicho proceso.</p>
+				
+			</div>
+			<div class="imagenes"><img src="imagenes/unidad2(1).jpeg"></div>
+		</div><br><br>
+		
+		
+		
+		<div class="secciones">
+			<div>
+	
+				<h1 class="titulo" id="2.2"><b>2.2 Estructura de los registros</b></h1><br>
+				<p>Los registros se encuentran dentro de cada microprocesador y su funci&oacute;n es almacenar los valores de datos, comandos, 
+				instrucciones o estados binarios que ordenan qué dato debe procesarse, como la forma en la que se debe hacer.</p><br><br>
+				
+				<h4 style="text-align: center;"><i>El tamaño de un registro depende del CPU:</i></h4><br>
+				
+				<ul>
+					<li>Simples: 8 a 16 bits de datos.</li>
+					<li>Complejos: 32, 48, 62 bits.</li>
+				</ul><br>
+				
+				<h4 style="text-align: center;"><i>Tambi&eacute;n:</i></h4><br>
+				
+				<ol style="font-weight: bold;">
+					<li>Necesita una pequeña memoria interna.</li>
+					<li>Se indican los caminos de transferencia de datos y de control l&oacute;gico, que incluyen un elemento con el r&oacute;tulo 
+					bus interno de la CPU.</li>
+					<li>Transferir datos entre los diversos registros y la ALU, ya que &eacute;sta en realidad solo opera con datos de la memoria 
+					interna de la CPU.</li>
+				</ol>
+				
+			</div>
+			<div class="imagenes"><img src="imagenes/unidad2(2).jpg"></div>
+		</div><br><br>
+		
+		
+		
+		<div class="secciones">
+			<div>
+	
+				<h2 class="titulo"><b>2.2.1 Registros visibles para el usuario</b></h2><br>
+				<p>Son los registros accesibles al programador de lenguaje de m&aacute;quina, los cuales son utilizados con el objeto de minimizar 
+				los accesos a memoria principal, t&iacute;picamente registros de entrada salida de la ALU. Estos registros pueden ser de uso 
+				general o espec&iacute;fico. Por ejemplo hay registros que sólo son utilizados como registros de direcciones, otros que s&oacute;lo 
+				son registros de datos <i>(argumentos de entrada o salida de la ALU)</i>. Tambi&eacute;n pueden existir registros de 
+				prop&oacute;sito general los cuales son utilizados tanto como datos como para el c&aacute;lculo de direcciones. Dado que estos 
+				registros son visibles para el programador de nivel 2, estas restricciones est&aacute;n estipuladas en la sintaxis de dicho 
+				lenguaje 2. De aqu&iacute; se ve que el lenguaje de m&aacute;quina <i>(repertorio de instrucciones interpretado por la CPU)</i> 
+				esta condicionado a las restricciones de diseño de su CPU.</p><br><br>
+				
+				<h4 style="text-align: center;"><i>Los registros que normalmente estan disponibles son:</i></h4><br>
+				
+				<p><b style="color: #38b1fc">Registros de prop&oacute;sito general:</b> Son aquellos que pueden guardar tanto datos como direcciones.<br>
+
+				<b style="color: #38b1fc">Registro de datos:</b> Que pueden ser asignados por el programador a diversas funciones. En algunos casos son de prop&oacute;sito 
+				general y pueden ser empleados por cualquier instrucci&oacute;n de m&aacute;quina que lleve a cabo operaciones sobre los datos.<br>
+
+				<b style="color: #38b1fc">Registros de direcciones:</b> Contienen direcciones en la memoria principal de datos y este tipo de registro puede ser de 
+				prop&oacute;sito general o estar a un modo espec&iacute;fico de direccionamiento.<br>
+
+				<b style="color: #38b1fc">C&oacute;digos de condici&oacute;n:</b> Tambi&eacute;n conocidos como indicadores o flags. Los c&oacute;digos de 
+				condici&oacute;n, son bits activados por el procesador como resultado de determinadas operaciones.</p>
+				
+			</div>
+		</div><br>
+		
+		
+		
+		<div class="secciones">
+			<div>
+	
+				<h2 class="titulo"><b>2.2.2 Registros de control y estados</b></h2><br>
+				<p>Se utilizan para controlar las operaciones del procesador, la mayor parte de estos registros no son visibles al usuario y 
+				algunos pueden ser accesibles a las instrucciones de maquina ejecutadas en un modo de control.</b></p><br><br>
+				
+				<h4 style="text-align: center;"><i>Los registros utilizados son los siguientes:</i></h4><br>
+
+				<p><b style="color: #38b1fc">Registro de direcciones de memoria <i>(MAR)</i>:</b> El cual contiene la direcci&oacute;n en donde se efectuar&aacute; la 
+				pr&oacute;xima lectura o escritura de datos. El numero de direcciones depende del tamaño de la MAR.<br>
+
+				<b style="color: #38b1fc">Registro de datos de memoria <i>(MBR)</i>:</b> Contiene los datos que van a ser escritos en la memoria o los que fueron 
+				le&iacute;dos en ella.<br>
+
+				<b style="color: #38b1fc">Registro de direcciones de entrada y salida <i>(I/O AR)</i>:</b> Especifica al dispositivo ya sea de entrada o salida.<br>
+
+				<b style="color: #38b1fc">Registro de datos de entrada y salida <i>(I/O BR)</i>:</b> Es una &aacute;rea temporal en donde se lleva a cabo el intercambio 
+				de datos entre el procesador y el dispositivo de entrada y salida que esta especificado en IOAR.<br>
+
+				<b style="color: #38b1fc">Registro de instrucciones <i>(IR)</i>:</b> Contiene la direcci&oacute;n de la siguiente instrucci&oacute;n que se va a 
+				ejecutar.<br>
+
+				<b style="color: #38b1fc">Palabras de estado del programa <i>(PSW)</i>:</b> Contiene c&oacute;digos de condici&oacute;n junto con otras informaciones 
+				de estado como el signo, acarro, desbordamiento, entre otras.</p>
+								
+			</div>
+		</div><br>
+		
+		
+		
+		
+		<div class="secciones">
+			<div>
+	
+				<h2 class="titulo"><b>2.2.3 Ejemplos de registros de CPU reales</b></h2><br>
+				<p>La CPU tiene 14 registros internos, cada uno de 16 bits. Los primeros cuatro, AX, BX, CX, y DX son registros de uso general 
+				y tambi&eacute;n pueden ser utilizados como registros de 8 bits, para utilizarlos como tales es necesario referirse a ellos como 
+				por ejemplo: AH y AL, que son los bytes alto <i>(high)</i> y bajo <i>(low)</i> del registro AX. Esta nomenclatura es aplicable 
+				tambi&eacute;n a los registros BX, CX y DX</p><br><br>
+				
+				<h4 style="text-align: center;"><i>Los 14 registros son conocidos por sus nombres espec&iacute;ficos:</i></h4><br>
+				
+				<table class="tabla">
+
+				  <tr>
+					<td><b>AX</b> Acomulador</td>
+					<td><b>BX</b> Registro base</td>
+				  </tr>
+
+				  <tr>
+					<td><b>CX</b> Registro contador</td>
+					<td><b>DX</b> Registro de datos</td>
+				  </tr>
+				  
+				  <tr>
+					<td><b>DS</b> Registro del segmento de datos</td>
+					<td><b>ES</b> Registro del segmento extra</td>
+				  </tr>
+				  
+				  <tr>
+					<td><b>SS</b> Registro del segmento de pila</td>
+					<td><b>CS</b> Registro del segmento de c&oacute;digo</td>
+				  </tr>
+				  
+				  <tr>
+					<td><b>BP</b> Registro de apuntadores base</td>
+					<td><b>SP</b> Registro del apuntador de la pila</td>
+				  </tr>
+				  
+				  <tr>
+					<td><b>SI</b> Registro &iacute;ndice fuente</td>
+					<td><b>DI</b> Registro &iacute;ndice destino</td>
+				  </tr>
+				  
+				  <tr>
+					<td><b>IP</b> Registro de apuntador de siguiente instrucci&oacute;n</td>
+					<td><b>F</b> Registro de banderas</td>
+				  </tr>
+
+				</table>
+				
+			</div>
+		</div>
+		
+		
+		
+		<div class="secciones">
+			<div>
+	
+				<h3 style="text-align: center;"><i>Motorola 68000</i></h3><br>
+				<p>Est&aacute; basado en dos bancos de 8 registros de 32 bits. Un banco es de datos <i>(Dn)</i> y el otro de punteros <i>(An)</i>. 
+				Adem&aacute;s contiene un contador de programa de 32 bits y un registro de estado de 16 bits. Los registros de datos <i>(D0 a D7)</i> 
+				se pueden usar como registros de 32 bits <i>(.l)</i>, 16 bits <i>(.w)</i> y 8 bits <i>(.b)</i>. Cualquiera de ellos puede usarse 
+				como acumulador, &iacute;ndice o puntero.</p><br>
+				
+				<h4 style="text-align: center;"><i>Acepta los siguientes modos de direccionamiento:</i></h4><br>
+				
+				<ul>
+					<li>Impl&iacute;cito <i>(o inherente)</i>.</li>
+					<li>Inmediato.</li>
+					<li>Absoluto.</li>
+					<li>Directo a registro.</li>
+					<li>Indirecto.</li>
+					<li>Relativo a PC con desplazamiento.</li>
+					<li>Relativo a PC con &iacute;ndice y desplazamiento.</li>
+				</ul>
+				
+				
+			</div>
+			<div class="imagenes"><img src="imagenes/unidad2(3).jpg"></div>
+		</div><br><br>
+		
+		
+		
+		<div class="secciones">
+			<div>
+	
+				<h1 class="titulo" id="2.3"><b>2.3 El ciclo de la instrucci&oacute;n</b></h1><br>
+				<p>Se denomina ciclo de instrucci&oacute;n a la secuencia de acciones que realiza la CPU para lograr ejecutar una instrucci&oacute;n
+				del programa almacenado en memoria.</p>
+				
+				<p>Es una especificaci&oacute;n que detalla las instrucciones que una CPU de un ordenador puede entender y ejecutar, o el 
+				conjunto de todos los comandos implementados por un diseño particular de una CPU.</p><br><br>
+				
+				<h4 style="text-align: center;"><i>Un ciclo de instrucci&oacute;n incluye los siguientes subciclos:</i></h4><br>
+
+				<p><b style="color: #38b1fc">Captaci&oacute;n:</b> llevar la siguiente instrucci&oacute;n de la memoria al procesador.</p>
+
+				<p><b style="color: #38b1fc">Ejecuci&oacute;n:</b> interpretar el c&oacute;digo de operaci&oacute;n y llevar a cabo la operaci&oacute;n indicada.</p>
+
+				<p><b style="color: #38b1fc">Interrupci&oacute;n:</b> si las interrupciones están habilitadas y ha ocurrido una interrupci&oacute;n, guardar el estado 
+				del proceso actual y atender la interrupci&oacute;n.</p>
+								
+			</div>
+			<div class="imagenes"><img src="imagenes/unidad2(4).png"></div>
+		</div><br><br>
+		
+		
+		
+		<div class="secciones">
+			<div>
+	
+				<h2 class="titulo"><b>2.3.1 Ciclo Fatch-Decode-Execute</b></h2><br>
+				<p>El encargado de ejecutar un programa en una computadora u otro sistema computacional es el CPU, lo realiza siguiendo 
+				el llamado ciclo Fetch Decode Execute, con este ciclo se ejecutan todas las tareas que una computadora puede realizar.</p><br><br>
+				
+				<p>El proceso de ejecutar instrucciones se puede subdividir en una secuencia de pasos l&oacute;gicos en un ciclo llamado 
+				extrae – decodifica – procesa <i>(EDP)</i>. A nivel macro se puede decir que ocurren las siguientes instancias en dicho 
+				proceso:</p><br>
+				
+				<table class="tabla">
+
+				  <tr>
+					<td><b>1- (Instruction Fetch):</b> Extraer la instrucci&oacute;n de memoria <i>(direccionada por el PC)</i> y almacenarla 
+					en el IR. Utiliza las interfaces del bus de datos y direcciones.</td>
+				  </tr>
+
+				  <tr>
+					<td><b>2- (Instruction Decode):</b> Unidad de control inicia el proceso de decodificaci&oacute;n, para determinar el tipo de 
+					instrucción <i>(opcode)</i>. Tambi&eacute;n se determina en esta etapa la naturaleza de los argumentos, por ejemplo si hay que 
+					accesarlos de memoria. Paralelamente se incrementa el PC para apuntar a la siguiente instrucci&oacute;n.</td>
+				  </tr>
+				  
+				  <tr>
+					<td><b>3- (Operand Fetch):</b> Extrae los argumentos desde memoria o registros <i>(si los hay)</i> y carga en los registros 
+					de entrada de la ALU.</td>
+				  </tr>
+				  
+				  <tr>
+					<td><b>4- (Execute):</b> Ejecuta instrucci&oacute;n <i>(ALU)</i>.</td>
+				  </tr>
+				  
+				  <tr>
+					<td><b>5- (Result Store):</b> Almacena los resultados en el lugar apropiado <i>(registros internos temporales o 
+					memoria)</i>.</td>
+				  </tr>
+
+				</table>
+				
+			</div>
+			<div class="imagenes"><img src="imagenes/unidad2(5).jpg"></div>
+		</div><br>
+		
+		
+		
+		<div class="secciones">
+			<div>
+	
+				<h2 class="titulo"><b>2.3.2 Segmentaci&oacute;n de instrucciones</b></h2><br>
+				<p>La segmentaci&oacute;n de las instrucciones <i>(pipeline)</i> consiste en dividir el ciclo de ejecuci&oacute;n de las 
+				instrucciones en un conjunto de etapas. Estas etapas pueden coincidir o no con las fases del ciclo de ejecuci&oacute;n de 
+				las instrucciones.</p><br>
+
+                <p>El objetivo de la segmentaci&oacute;n es ejecutar simult&aacute;neamente diferentes etapas de distintas instrucciones, 
+				lo cual permite aumentar el rendimiento del procesador sin tener que hacer m&aacute;s r&aacute;pidas todas las unidades del 
+				procesador <i>(ALU, UC, buses, etc.)</i> y sin tener que duplicarlas.</p><br><br>
+				
+				<h4 style="text-align: center;"><i>Tareas que realiza por ciclo:</i></h4><br>
+				
+				<p><b>Búsqueda</b> <i>(F, Fetch)</i></p>
+				
+				<ul>
+					<li>Se accede a memoria por la instrucci&oacute;n.</li>
+					<li>Se incrementa el PC.</li>
+				</ul><br>
+
+				<p><b>Decodificaci&oacute;n</b> <i>(D, Decode)</i></p>
+				
+				<ul>
+					<li>Se decodifica la instrucci&oacute;n, obteniendo operaci&oacute;n a realizar en la ruta de datos.</li>
+					<li>Se accede al banco de registros por el/los operando/s <i>(si es necesario)</i>.</li>
+					<li>Se calcula el valor del operando inmediato con extensi&oacute;n de signo <i>(si hace falta)</i>.</li>
+				</ul><br>
+				
+				<p><b>Ejecuci&oacute;n</b> <i>(X, Execute)</i></p>
+
+				<ul>
+					<li>Se ejecuta la operaci&oacute;n en la ALU.</li>
+				</ul><br>
+				
+				<p><b>Acceso a memoria</b> <i>(M, Memory Access)</i></p>
+
+				<ul>
+					<li>Si se requiere un acceso a memoria, se accede.</li>
+				</ul><br>
+				
+				<p><b>Almacenamiento</b> <i>(W, Writeback)</i></p>
+
+				<ul>
+					<li>Si se requiere volcar un resultado a un registro, se accede al banco de registros.</li>
+				</ul><br>
+				
+			</div>
+			<div class="imagenes"><img src="imagenes/unidad2(6).jpeg"></div>
+		</div>
+		
+		
+		
+		
+		<div class="secciones">
+			<div>
+	
+				<h2 class="titulo"><b>2.3.3 Conjunto de instrucciones <i>(caracter&iacute;sticas y funciones)</i></b></h2><br>
+				<p>Un conjunto de instrucciones o repertorio de instrucciones, juego de instrucciones o ISA <i>(del inglés Instruction Set 
+				Architecture, Arquitectura del Conjunto de Instrucciones)</i> es una especificaci&oacute;n que detalla las instrucciones que 
+				una CPU de un ordenador puede entender y ejecutar, o el conjunto de todos los comandos implementados por un diseño particular de 
+				una CPU. El t&eacute;rmino describe los aspectos del procesador generalmente visibles a un programador, incluyendo los tipos de 
+				datos nativos, las instrucciones, los registros, la arquitectura de memoria y las interrupciones, entre otros aspectos.</p><br><br>
+				
+				<h4 style="text-align: center;"><i>Existen principalmente de 3 tipos:</i></h4><br>
+				
+				<ol>
+					<li>CISC <i>(Complex Instruction Set Computer)</i>.</li>
+					<li>RISC <i>(Reduced Instruction Set Computer)</i>.</li>
+					<li>SISC <i>(Simple Instruction Set Computing)</i>.</li>
+				</ol><br>
+				
+				<p>La arquitectura del conjunto de instrucciones <i>(ISA)</i> se emplea a veces para distinguir este conjunto de 
+				caracter&iacute;sticas de la microarquitectura, que son los elementos y t&eacute;cnicas que se emplean para implementar el 
+				conjunto de instrucciones. Entre estos elementos se encuentran las microinstrucciones y los sistemas de cach&eacute;.</p><br><br>
+				
+				<h4 style="text-align: center;"><i>Caracter&iacute;sticas:</i></h4><br>
+				
+				<p><b style="color: #38b1fc">Completo:</b> Que se pueda realizar en un tiempo finito cualquier tarea ejecutable con un ordenador 
+				<i>(computable o decidible)</i>.</p>
+
+				<p><b style="color: #38b1fc">Eficiente:</b> Que permita alta velocidad de c&aacute;lculo sin exigir una elevada complejidad en su UC y ALU y 
+				sin consumir excesivos recursos <i>(memoria)</i>, es decir, debe cumplir su tarea en un tiempo razonable minimizando el uso 
+				de los recursos.</p>
+
+				<p><b style="color: #38b1fc">Autocontenidas:</b> Esto es, que contengan en sí mismas toda la informaci&oacute;n necesaria para ejecutarse.</p>
+
+				<p><b style="color: #38b1fc">Independientes:</b> Que no dependan de la ejecuci&oacute;n de alguna otra instrucci&oacute;n.</p><br><br>
+				
+				<h4 style="text-align: center;"><i>Se puede comprobar que para que un conjunto de instrucciones sea completo solo se 
+				necesitan cuatro instrucciones:</i></h4><br>
+				
+				<p>-Escritura<br>
+
+				-Mover a la izquierda una posici&oacute;n y leer<br>
+
+				-Mover a la derecha una posici&oacute;n y leer<br>
+
+				-Parar</p>
+				
+			</div>
+		</div><br>
+		
+		
+		
+		<div class="secciones">
+			<div>
+	
+				<h2 class="titulo"><b>2.3.4 Modo de direccionamiento</i></b></h2><br>
+				<p>Son las diversas formas con las que se puede indicar a un procesador d&oacute;nde encontrar o depositar un dato, en una 
+				instrucci&oacute;n. Este identifica los operandos de la operaci&oacute;n a realizar, fuente y destino, de los datos sobre los 
+				que se operar&aacute;. Se pueden especificar por: un registro de la CPU, una localidad de memoria, un puerto de Entrada/Salida o 
+				un dato inmediato. Existen dos grupos: modos de Registro o modos de Memoria. La dirección física de memoria o registro donde 
+				se encuentra realmente el operando se llama Direcci&oacute;n Efectiva, y se representa < ea >.</p><br>
+				
+				<p>Seg&uacute;n el modo de direccionamiento utilizado, la CPU tendr&aacute; que realizar unos c&aacute;lculos distintos hasta 
+				obtener el valor de dicha direcci&oacute;n efectiva. Las instrucciones pueden contener hasta dos operandos que se denominan 
+				Operando Fuente, el del lado derecho, y Operando Destino, el del lado izquierdo. En estos casos, cada operando tendr&aacute; su 
+				propio modo de direccionamiento.</p>
+				<br><br>
+				
+				<h4 style="text-align: center;"><i>Tipos</i></h4><br>
+				
+				<p><b style="color: #38b1fc">Inmediato:</b> Transfiere un byte o palabra de datos inmediato hacia el operando destino. Este modo es usado para inicializar 
+				registros o localidades de memoria y para operar sobre ellos con valores constantes de datos. Este modo no opera con registros de 
+				segmento, por lo que no se puede cargar un registro de segmento de manera inmediata.</p>
+				
+				<p><b style="color: #38b1fc">Por Registro:</b> Transfiere un byte o palabra desde un registro fuente hasta un registro destino. Los dos operandos no pueden 
+				ser registros de segmento. El registro de segmento de c&oacute;digo <i>(CS)</i> nunca puede utilizarse como destino. No se 
+				permite el acceso entre registros de segmento ni de distintos tamaños.</p>
+
+				<p><b style="color: #38b1fc">Directo:</b> Transfiere un byte o palabra, contenido en una localidad de memoria en el segmento DS, a un registro de 8 o 16 bits. 
+				La localidad de memoria puede ser el operando fuente o destino. La direcci&oacute;n de memoria se proporciona directamente como parte 
+				de la instrucción <i>(Puede ser a trav&eacute;s de etiquetas, en las cuales el programador no necesita conocer la dirección 
+				num&eacute;rica)</i>.</p>
+
+				<p><b style="color: #38b1fc">Indirecto:</b> El modo de direccionamiento directo se usa para acceder localidades de memoria de manera no frecuente. Sin embargo 
+				cuando una localidad de memoria debe ser le&iacute;da o escrita varias veces dentro de un programa, la b&uacute;squeda repetida de la 
+				direcci&oacute;n l&oacute;gica hace este modo ineficiente. El modo de direccionamiento indirecto resuelve este problema almacenando esta 
+				direcci&oacute;n de memoria en un registro base <i>(BX, BP)</i>o un registro &iacute;ndice <i>(SI o DI)</i>.</p>
+				
+			</div>
+		</div><br><br>
+		
+		
+		
+		<div class="secciones">
+			<div>
+	
+				<h1 class="titulo" id="2.4"><b>2.4 Casos de estudio de CPU reales</b></h1><br>
+				
+				<h4 style="text-align: center;"><i>Intel 80386</i></h4><br>
+				
+				<p>Se compone de una unidad de ejecución y una unidad de instrucciones. La unidad de ejecución tiene ocho registros de 
+				32 bits para el cálculo de direcciones y operaciones con datos, y un barrel shifter de 64 bits para acelerar ciertas operaciones. 
+				Este procesador utiliza varios modos de direccionamiento, incluyendo uno nuevo que requiere un byte adicional llamado SIB. 
+				También tiene varios registros de propósito general, segmento, puntero de instrucciones, indicadores, control, direcciones de 
+				sistema, depuración y test.</p>
+				
+			</div>
+			<div class="imagenes"><img src="imagenes/unidad2(7).jpg"></div>
+		</div>
+		
+		
+		
+		<div class="secciones">
+			<div>
+	
+				<h4 style="text-align: center;"><i>Procesador I3</i></h4><br>
+				
+				<p>El procesador I3 es de la línea de microprocesadores Intel de gama baja de tercera generación, y cuenta con dos núcleos y 
+				cuatro hilos de procesamiento en paralelo, una tarjeta gráfica integrada, un controlador de memoria y un controlador PCI 
+				Express 2.0 integrado. Este procesador utiliza modos de direccionamiento como el implícito y el inmediato, que permiten acceder 
+				a los operandos sin especificar una dirección de forma explícita.</p><br>
+				
+				<p>En general, los modos de direccionamiento especifican la forma de calcular la dirección de memoria efectiva de un operando 
+				mediante el uso de la información contenida en registros y/o constantes contenidas en una instrucción de la máquina o en otra 
+				parte.</p><br>
+				
+				<ul>
+					<li>Directo</li>
+					<li>Indirecto</li>
+					<li>Relativo</li>
+					<li>Abslouto</li>
+					<li>Con registro en base</li>
+					<li>Autoincrementa</li>
+					<li>Indexado</li>
+					<li>Autodecrementa</li>
+				</ul>
+				
+			</div>
+			<div class="imagenes"><img src="imagenes/unidad2(8).jpeg"></div>
+		</div>
+		
+		
+		
+		<div class="secciones">
+			<div>
+				
+				<h4 style="text-align: center;"><i>I-8086</i></h4><br>
+				
+				<p>Los registros del procesador, se usan para contener los datos con que se está trabajando puesto que el acceso a los 
+				registros es mucho más rápido que los accesos a memoria. Se pueden realizar operaciones aritméticas y lógicas, comparaciones, 
+				entre otras. Los modos del 8086 son indirectos por registro, indexados o directos por registro.</p>
+				
+			</div>
+			<div class="imagenes"><img src="imagenes/unidad2(9).jpg"></div>
+		</div>
+		
+		
+		
+		
+	</div>
+	
+	
+	<div class="temario-unidad">
+	
+		<h2>Temario</h2>
+		<br><br>
+		<a>Unidad 2</a>
+		<p style="text-align: center";><i> ESTRUCTURA Y FUNCIONAMIENTO DE LA UNIDAD CENTRAL DE PROCESAMIENTO (CPU) </i></p>
+		<br>
+		
+		<h3 class="subgrande"><a href="#2.1"> 2.1 Organizaci&oacute;n del procesador </a></h3><br>
+         <ul style="list-style: none";>
+		 <h3 class="subgrande"><a href="#2.2"> 2.2 Estructura de los registros </a></h3>
+		 <li> 2.2.1 Registros visibles para el usuario </li>
+	     <li> 2.2.2 Registros de control y estados </li>
+	     <li> 2.2.3 Ejemplos de registros de CPU reales </li><br>
+	    <h3 class="subgrande"><a href="#2.3"> 2.3 El ciclo de la instrucci&oacute;n </a></h3>
+		 <li> 2.3.1 Ciclo Fatch-Decode-Execute </li>
+		 <li> 2.3.2 Segmentaci&oacute;n de instrucciones </li>
+		 <li> 2.3.3 Conjunto de instrucciones </li>
+			<li style="color: #38b1fc"><i>-Caracter&iacute;sticas</i></li>
+			<li style="color: #38b1fc"><i>-Funciones</i></li>
+		 <li> 2.3.4 Modo de direccionamiento </li><br>
+		<h3 class="subgrande"><a href="#2.4"> 2.4 Casos de estudio de CPU reales </a></h3><br>
+		 </ul>
+		
+	</div>
+	
+	
+</div>
+
+
+<!-- Firma y fecha de la página, ¡sólo por cortesía! -->
+<footer>
+
+	<div class="social-icons-container">
+		<a target="_blank" href="https://www.facebook.com/TecNMcampusSaltillo" class="social-icon"></a>
+		<a target="_blank" href="https://www.instagram.com/tecnmitsaltillo/?igshid=YmMyMTA2M2Y%3D" class="social-icon"></a>
+		<a target="_blank" href="https://www.youtube.com/watch?v=wYwi_L8h00c" class="social-icon"></a>
+		<a target="_blank" href="https://saltillo.tecnm.mx/#" class="social-icon"></a>
+	</div>
+	
+	<ul class="footer-menu-container">
+	   <li class="menu-item">L21051525@saltillo.tecnm.mx</li>
+	   <li class="menu-item"><b><i>Matr&iacute;cula:</i></b> 21051525</li>
+	   <li class="menu-item"><b><i>Materia:</i></b> Arquitectura de computadoras - 17:00 a 18:00</li>
+	   <li class="menu-item"><b><i>Creado por:</i></b> Manuel Treviño Barr&oacute;n</li>
+	</ul>
+	
+	<span class="copyright">&copy;2023, Manuel Treviño. All rights reserved</span>
+	
+</footer>
+
+
+</body>
+
+</html>
